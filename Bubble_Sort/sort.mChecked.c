@@ -33,7 +33,7 @@ _Tainted _TPtr<int> tainted_sort (int n, _TArray_ptr<int> ptr);
     }
 
     // Yeah, this sort of works -->
-    _TPtr<int> r34;
+    _TPtr<int> r34 = NULL;
     r34 = tainted_sort(n, temp);
     printf(" %d", r34[0]);
     printf(" %d", r34[1]);
