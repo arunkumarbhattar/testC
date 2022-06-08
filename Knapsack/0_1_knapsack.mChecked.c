@@ -27,6 +27,7 @@ int knapsack(int W, int wt _Checked[]:count(n), int val _Checked[]:count(n), int
  
 int main(void)
 {
+    _Ptr<int>* tmp;
     int val _Checked[] = {60, 100, 120};
     int wt _Checked[] = {10, 20, 30};
     int  W = 50;

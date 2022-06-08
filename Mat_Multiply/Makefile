@@ -1,14 +1,4 @@
-CC      = clang
-PROGRAM = matMultiply
+SYSROOT=/home/arun/Desktop/build
 
-original: 
-	@$(CC) $(PROGRAM).c 
-
-checked:
-	@$(CC) $(PROGRAM).checked.c 
-
-just3c:
-	@$(CC) $(PROGRAM).just3c.c
-
-manual:
-	@$(CC) $(PROGRAM).mChecked.c
+execute:
+	gcc -L${SYSROOT}/usr/lib64 -I${SYSROOT}/include -Wl,-rpath=${SYSROOT}/lib64 -Wl,--dynamic-linker=${SYSROOT}/lib64/ld-2.18.90.so -o matMultiply matMultiply.c

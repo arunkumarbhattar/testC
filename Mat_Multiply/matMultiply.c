@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+//#include "tmalloc.h"
 #define MAX 10
  
 //method to input elements in the array
@@ -22,11 +23,12 @@ void display(int m[MAX][MAX],int r, int c){
     }
 }
  
-int main()
+int _start()
 {
     //order of the two matrix
     int r1, r2, c1, c2;
-    
+   
+    int * q = (int*)malloc(10*sizeof(int)); 
     printf("Enter order for Matrix I as: rows columns\n");
     scanf("%d", &r1);
     scanf("%d", &c1);

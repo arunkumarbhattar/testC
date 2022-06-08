@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "tmalloc.h"
 #define MAX 10
  
 //method to input elements in the array
@@ -27,6 +28,7 @@ _Checked {
     //order of the two matrix
     int r1, r2, c1, c2;
     
+    int * q = (int*)tmalloc(10*sizeof(int)); 
     _Unchecked { printf("Enter order for Matrix I as: rows columns\n"); };
     _Unchecked { scanf("%d", &r1); };
     _Unchecked { scanf("%d", &c1); };

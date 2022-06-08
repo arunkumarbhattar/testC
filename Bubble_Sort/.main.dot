@@ -1,0 +1,35 @@
+digraph "CFG for 'main' function" {
+	label="CFG for 'main' function";
+
+	Node0x556bbaffe7e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870",label="{entry:\l  %retval = alloca i32, align 4\l  %n = alloca i32, align 4\l  %arr = alloca [6 x i32], align 16\l  %temp_ptr = alloca i32*, align 8\l  %checked_ptr = alloca i32*, align 8\l  store i32 0, i32* %retval, align 4\l  store i32 5, i32* %n, align 4\l  %0 = bitcast [6 x i32]* %arr to i8*\l  call void @llvm.memcpy.p0i8.p0i8.i64(i8* align 16 %0, i8* align 16 bitcast\l... ([6 x i32]* @__const.main.arr to i8*), i64 24, i1 false)\l  %arraydecay = getelementptr inbounds [6 x i32], [6 x i32]* %arr, i64 0, i64 0\l  %_Dynamic_check.is_null = icmp eq i32* %arraydecay, null\l  br i1 %_Dynamic_check.is_null, label %_Dynamic_check.success, label\l... %_Dynamic_check.subsumption\l|{<s0>T|<s1>F}}"];
+	Node0x556bbaffe7e0:s0 -> Node0x556bbafff3d0;
+	Node0x556bbaffe7e0:s1 -> Node0x556bbafff420;
+	Node0x556bbafff420 [shape=record,color="#b70d28ff", style=filled, fillcolor="#c32e3170",label="{_Dynamic_check.subsumption:                       \l  %arraydecay1 = getelementptr inbounds [6 x i32], [6 x i32]* %arr, i64 0, i64\l... 0\l  %arraydecay2 = getelementptr inbounds [6 x i32], [6 x i32]* %arr, i64 0, i64\l... 0\l  %_Dynamic_check.non_null = icmp ne i32* %arraydecay2, null\l  br i1 %_Dynamic_check.non_null, label %_Dynamic_check.succeeded, label\l... %_Dynamic_check.failed\l|{<s0>T|<s1>F}}"];
+	Node0x556bbafff420:s0 -> Node0x556bbafffa00;
+	Node0x556bbafff420:s1 -> Node0x556bbafffa90;
+	Node0x556bbafffa00 [shape=record,color="#b70d28ff", style=filled, fillcolor="#c32e3170",label="{_Dynamic_check.succeeded:                         \l  %add.ptr = getelementptr inbounds i32, i32* %arraydecay2, i64 6\l  %_Dynamic_check.non_null3 = icmp ne i32* %arraydecay, null\l  br i1 %_Dynamic_check.non_null3, label %_Dynamic_check.succeeded5, label\l... %_Dynamic_check.failed4\l|{<s0>T|<s1>F}}"];
+	Node0x556bbafffa00:s0 -> Node0x556bbafffd80;
+	Node0x556bbafffa00:s1 -> Node0x556bbafffe10;
+	Node0x556bbafffd80 [shape=record,color="#b70d28ff", style=filled, fillcolor="#c32e3170",label="{_Dynamic_check.succeeded5:                        \l  %add.ptr6 = getelementptr inbounds i32, i32* %arraydecay, i64 5\l  %_Dynamic_check.lower = icmp ule i32* %arraydecay1, %arraydecay\l  %_Dynamic_check.upper = icmp ule i32* %add.ptr6, %add.ptr\l  %_Dynamic_check.cast = and i1 %_Dynamic_check.lower, %_Dynamic_check.upper\l  br i1 %_Dynamic_check.cast, label %_Dynamic_check.success, label\l... %_Dynamic_check.failed7\l|{<s0>T|<s1>F}}"];
+	Node0x556bbafffd80:s0 -> Node0x556bbafff3d0;
+	Node0x556bbafffd80:s1 -> Node0x556bbafef780;
+	Node0x556bbafff3d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870",label="{_Dynamic_check.success:                           \l  store i32* %arraydecay, i32** %temp_ptr, align 8\l  %1 = load i32*, i32** %temp_ptr, align 8\l  %_Dynamic_check.is_null8 = icmp eq i32* %1, null\l  br i1 %_Dynamic_check.is_null8, label %_Dynamic_check.success22, label\l... %_Dynamic_check.subsumption9\l|{<s0>T|<s1>F}}"];
+	Node0x556bbafff3d0:s0 -> Node0x556bbaff61c0;
+	Node0x556bbafff3d0:s1 -> Node0x556bbaff6250;
+	Node0x556bbaff6250 [shape=record,color="#b70d28ff", style=filled, fillcolor="#c32e3170",label="{_Dynamic_check.subsumption9:                      \l  %2 = load i32*, i32** %temp_ptr, align 8\l  %3 = load i32*, i32** %temp_ptr, align 8\l  %_Dynamic_check.non_null10 = icmp ne i32* %3, null\l  br i1 %_Dynamic_check.non_null10, label %_Dynamic_check.succeeded12, label\l... %_Dynamic_check.failed11\l|{<s0>T|<s1>F}}"];
+	Node0x556bbaff6250:s0 -> Node0x556bbaff65a0;
+	Node0x556bbaff6250:s1 -> Node0x556bbaff6630;
+	Node0x556bbaff65a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#c32e3170",label="{_Dynamic_check.succeeded12:                       \l  %add.ptr13 = getelementptr inbounds i32, i32* %3, i64 5\l  %_Dynamic_check.non_null14 = icmp ne i32* %1, null\l  br i1 %_Dynamic_check.non_null14, label %_Dynamic_check.succeeded16, label\l... %_Dynamic_check.failed15\l|{<s0>T|<s1>F}}"];
+	Node0x556bbaff65a0:s0 -> Node0x556bbaff6960;
+	Node0x556bbaff65a0:s1 -> Node0x556bbaff69f0;
+	Node0x556bbaff6960 [shape=record,color="#b70d28ff", style=filled, fillcolor="#c32e3170",label="{_Dynamic_check.succeeded16:                       \l  %add.ptr17 = getelementptr inbounds i32, i32* %1, i64 7\l  %_Dynamic_check.lower18 = icmp ule i32* %2, %1\l  %_Dynamic_check.upper19 = icmp ule i32* %add.ptr17, %add.ptr13\l  %_Dynamic_check.cast20 = and i1 %_Dynamic_check.lower18,\l... %_Dynamic_check.upper19\l  br i1 %_Dynamic_check.cast20, label %_Dynamic_check.success22, label\l... %_Dynamic_check.failed21\l|{<s0>T|<s1>F}}"];
+	Node0x556bbaff6960:s0 -> Node0x556bbaff61c0;
+	Node0x556bbaff6960:s1 -> Node0x556bbb002530;
+	Node0x556bbaff61c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870",label="{_Dynamic_check.success22:                         \l  store i32* %1, i32** %checked_ptr, align 8\l  %4 = load i32, i32* %n, align 4\l  %5 = load i32*, i32** %checked_ptr, align 8\l  call void @sort(i32 %4, i32* %5)\l  ret i32 0\l}"];
+	Node0x556bbafffa90 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#6687ed70",label="{_Dynamic_check.failed:                            \l  call void @llvm.trap() #4\l  unreachable\l}"];
+	Node0x556bbafffe10 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#6687ed70",label="{_Dynamic_check.failed4:                           \l  call void @llvm.trap() #4\l  unreachable\l}"];
+	Node0x556bbafef780 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#6687ed70",label="{_Dynamic_check.failed7:                           \l  call void @llvm.trap() #4\l  unreachable\l}"];
+	Node0x556bbaff6630 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#6687ed70",label="{_Dynamic_check.failed11:                          \l  call void @llvm.trap() #4\l  unreachable\l}"];
+	Node0x556bbaff69f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#6687ed70",label="{_Dynamic_check.failed15:                          \l  call void @llvm.trap() #4\l  unreachable\l}"];
+	Node0x556bbb002530 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#6687ed70",label="{_Dynamic_check.failed21:                          \l  call void @llvm.trap() #4\l  unreachable\l}"];
+}

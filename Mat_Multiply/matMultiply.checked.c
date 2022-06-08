@@ -18,7 +18,7 @@ void display(int m _Checked[MAX] _Checked[MAX], int r, int c)_Checked {
         for(int j=0; j<c; j++)_Unchecked {
             printf("%d \t",m[i][j]);
         }
-        _Unchecked { printf("\n"); };
+        { printf("\n"); };
     }
 }
  
@@ -27,7 +27,7 @@ _Checked {
     //order of the two matrix
     int r1, r2, c1, c2;
     
-    _Unchecked { printf("Enter order for Matrix I as: rows columns\n"); };
+    { printf("Enter order for Matrix I as: rows columns\n"); };
     _Unchecked { scanf("%d", &r1); };
     _Unchecked { scanf("%d", &c1); };
  
