@@ -5,7 +5,7 @@
 
 #pragma CHECKED ON 
 // Function to sort the numbers using poin
-_Tainted int* tainted_sort (int n, _TArray_ptr<int> ptr);
+_Tainted _TPtr<int> tainted_sort (int n, _TArray_ptr<int> ptr);
 // Driver code
  int main(void)
 {
@@ -33,7 +33,7 @@ _Tainted int* tainted_sort (int n, _TArray_ptr<int> ptr);
     }
 
     // Yeah, this sort of works -->
-    int *r34;
+    _TPtr<int> r34;
     r34 = tainted_sort(n, temp);
     printf(" %d", r34[0]);
     printf(" %d", r34[1]);
