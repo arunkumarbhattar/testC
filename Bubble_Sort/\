@@ -1,0 +1,22 @@
+#pragma CHECKED ON 
+// Function to sort the numbers using poin
+#include <stdlib.h>
+char* global_pointer;
+
+int twin_turbo_add(int a, int b)
+{
+	return a+b;
+}
+
+_Tainted _TPtr<int> sort(_TPtr<int> argument_pointer)
+{
+	_TPtr<int> local_pointer;
+	*local_pointer = &twin_turbo_add(10,10);
+	return local_pointer;
+}
+// Driver code
+ int main(void)
+{
+    return 0;
+}
+
